@@ -170,6 +170,6 @@ function mainProcess() {
   const subpayment = commonDebit - (credit - firstContribution)
   document.querySelector('#subpayment').textContent = formatterCurrency.format(subpayment)
 
-  const payment = subpayment / (returnPeriod * 12)
+  const payment = Math.round(subpayment / (returnPeriod * 12))
   document.querySelector('#payment').textContent = formatterCurrency.format(payment)
 } 
